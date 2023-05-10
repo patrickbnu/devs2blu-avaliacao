@@ -1,0 +1,136 @@
+credentials.properties
+
+# .gitignore
+
+# Python
+__pycache__
+*.py[cod]
+*.pyc
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+*__pycache__
+*$
+.Python
+env/
+venv/
+ENV/
+
+# Django
+*.log
+local_settings.py
+db.sqlite3
+media
+
+# Ansible
+*.retry
+ansible.cfg
+*.vault
+.hosts
+
+# Terraform
+.terraform
+*.tfstate
+*.tfstate.backup
+*.tfvars
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Linux
+*~
+
+# JetBrains IDE
+.idea/
+
+# VS Code
+.vscode/
+
+# Others
+*.bak
+*.swp
+*.swo
+*~
+*.tmp
+*.temp
+*.tlog
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+*.zip
+*.7z
+*.tar.gz
+*.tar
+*.tar.*
+*.sql
+*.sqlite
+*.sqlite3
+*.db
+*.dll
+*.pdb
+*.exe
+*.lib
+*.a
+*.obj
+*.o
+*.lo
+*.la
+*.al
+*.aps
+*.ncb
+*.plg
+*.bsc
+*.ilk
+*.exp
+*.sbr
+*.opt
+*.ilk
+*.pch
+*.idb
+*.pdb
+*.ipch
+*.class
+*.tlh
+*.tlb
+*.bak
+*.cache
+*.ilk*
+*.obj
+*.pch
+*.idb
+*.ipch
+*.class
+*.tlb
+*.tlh
+*.bak
+*.cache
+*.ilk*
+test_result.xml
+junit.xml
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

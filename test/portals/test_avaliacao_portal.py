@@ -11,7 +11,7 @@ class AvaliacaoPortalTestCase(unittest.TestCase):
         portal = AvaliacaoPortal(
             username="some_username",
             password="some_password",
-            login_url="https://www.clickpay.com/custom/clickpay/login.html",
+            login_url="https://externo.proway.com.br/login-aluno",
         )
         assert portal.token is not None
 

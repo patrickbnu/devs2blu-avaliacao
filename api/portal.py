@@ -3,8 +3,8 @@ import re
 import time
 from pathlib import Path
 
-from . import Session
-from . import logger
+from requests import Session
+from loguru import logger
 
 
 class Portal(Session):
@@ -53,22 +53,7 @@ class Portal(Session):
             kwargs["exception"] = e
             return self.post(url, **kwargs)
 
-    def convert_balance_to_cents(self, balance: str):
-        balance = balance.replace("$", "")
-        balance = balance.replace(",", "")
-        return self.to_cents(balance)
-
-    def normalize_negative_amount(self, amount_str: str) -> int:
-        """
-        Handle negative amount strings - ex:
-        (123.45) => -123.45
-        :param amount_str: string to perform regex on
-        :return: amount in cents
-        """
-        negative_amount = re.findall("\((.*?)\)", amount_str)
-        if negative_amount:
-            return -self.convert_balance_to_cents(negative_amount[0].strip())
-        return self.convert_balance_to_cents(amount_str.strip())
+  
 
     @staticmethod
     def check_status_code(response, no_raise=False):
@@ -76,10 +61,10 @@ class Portal(Session):
             return
         if response.status_code >= 400:
             if response.status_code == 422:
-                raise Exception
+                raise Exception(f"422: message: {response.text}")
             if response.status_code == 401:
-                raise Exception
-            raise Exception
+                raise Exception(f"401: message: {response.text}")
+            raise Exception(f"{response.status_code} (unknow): message: {response.text}")
 
 
    

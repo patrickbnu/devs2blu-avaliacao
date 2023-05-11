@@ -2,12 +2,12 @@ import requests
 from typing import Dict
 from datetime import date
 
-from . import PortalHttpInterface
-from . import Portal
-from . import bind_custom_html_element
+from api.portal_http_interface import PortalHttpInterface
+from api.portal import Portal
+from api.xpath_utils import bind_custom_html_element
 
 
-class HTTPPortal(PortalHttpInterface, Portal):
+class HTTPPortal(Portal):
 
     def __init__(self, username, password,  **kwargs):
         super().__init__()
@@ -47,5 +47,3 @@ class HTTPPortal(PortalHttpInterface, Portal):
         if not data:
             data = form.data()
         return self.post(url, data=data, **kwargs)
-
-   

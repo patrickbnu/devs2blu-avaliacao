@@ -1,15 +1,17 @@
 from abc import abstractmethod, ABCMeta
 
+### TODO no momento não utilizado
 class PortalHttpInterface(metaclass=ABCMeta):
+    
     @classmethod
     def __subclasshook__(cls, subclass):
-        return (hasattr(subclass, 'validate_credentials') and 
-                callable(subclass.validate_credentials) or 
+        return (hasattr(subclass, 'login') and 
+                callable(subclass.login) or 
                 NotImplemented)
 
 
     @abstractmethod
-    def validate_credentials(self) -> str:
+    def login(self) -> str:
         raise NotImplementedError
 
 

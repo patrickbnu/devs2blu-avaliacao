@@ -5,3 +5,4 @@ Também sem validações da informações, como notas (valores inteiros de 1 a 5
 
 Atualmente a forma de usar é executar o arquivo main.py, futuramente vai virar uma biblioteca 
 
+Executando o arquivo do jeito que ele está, as informações serão pedidas via console
